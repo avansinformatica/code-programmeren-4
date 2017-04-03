@@ -1,0 +1,22 @@
+{
+  "name": "myfirstrestfulserver",
+  "version": "1.0.0",
+  "description": "Eerste RESTful server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "javascript",
+    "rest"
+  ],
+  "author": "Robin Schellius",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1"
+  }
+}
