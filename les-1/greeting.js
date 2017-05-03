@@ -1,5 +1,5 @@
-function greeting(text){ 
-	console.log(text); 
+function greeting(bla){ 
+	console.log(bla); 
 }
 
 greeting('hello world!');
