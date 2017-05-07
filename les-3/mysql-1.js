@@ -2,18 +2,18 @@ var mysql = require('mysql');
 
 var connection = mysql.createConnection({
   host     : 'localhost',
-  user     : '< MySQL username >',
-  password : '< MySQL password >',
-  database : '<your database name>'
+  user     : 'node_mysql_user',
+  password : process.env.DB_PASSWORD,
+  database : 'sakila'
 });
 
 connection.connect();
 
-connection.query('SELECT * from < table name >', function(error, rows, fields) {
+connection.query('SELECT * from actors LIMIT 3', function(error, rows, fields) {
   if (error)
-    console.log('Error while performing query: ' + error);
+    console.log('' + error);
   else
-    console.log('The solution is: ' + rows);
+    console.dir(rows);
 });
 
 connection.end();

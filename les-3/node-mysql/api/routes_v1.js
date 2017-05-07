@@ -1,6 +1,4 @@
-//
 // ./api/routes_v2.js
-//
 var express = require('express');
 var routes = express.Router();
 var db = require('../config/db');
@@ -27,19 +25,15 @@ routes.get('/goodbye', function(req, res){
 	res.json({ 'tekst': 'Goodbye!'});
 });
 
-//
 // Geef een lijst van alle actors. Dat kunnen er veel zijn.
-//
 routes.get('/actors', function(req, res){
 	res.contentType('application/json');
 
 	db.query('SELECT * FROM actor', function(error, rows, fields) {
 		if (error) { 
-			res.status(400);
-			res.json({ error: 'Error while performing Query.'});
+			res.status(400).json(error);
 		} else {
-			res.status(200);
-			res.json(rows);
+			res.status(200).json(rows);
 		};
 	});
 });
@@ -54,14 +48,13 @@ routes.get('/actors/:id', function(req, res){
 
 	res.contentType('application/json');
 
-	db.query('SELECT * FROM actor WHERE actor_id=?', [ actorId ], function(error, rows, fields) {
-		if (error) { 
-			res.status(400);
-			res.json({ error: 'Error while performing Query.'});
-		} else {
-			res.status(200);
-			res.json(rows);
-		};
+	db.query('SELECT * FROM actor WHERE actor_id=?', [ actorId ], 
+		function(error, rows, fields) {
+			if (error) { 
+				res.status(400).json(error);
+			} else {
+				res.status(200).json(rows);
+			};
 	});
 });
 
