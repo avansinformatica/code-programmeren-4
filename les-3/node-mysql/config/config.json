@@ -1,0 +1,7 @@
+{
+	"webPort"	: "3000",
+	"dbHost"	: "localhost",
+	"dbUser"	: "node_mysql_user", 
+	"dbDatabase": "sakila",
+	"dbPassword": "secret"
+}

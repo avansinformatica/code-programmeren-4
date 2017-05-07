@@ -1,0 +1,36 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "mijn eerste node server",
+  "main": "server.js",
+  "scripts": {
+    "test": "node node_modules/mocha/bin/_mocha ./test/*test.js --reporter spec",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rschellius/node-eersteserver.git"
+  },
+  "keywords": [
+    "node",
+    "server"
+  ],
+  "author": "Robin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rschellius/node-eersteserver/issues"
+  },
+  "homepage": "https://github.com/rschellius/node-eersteserver#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
+    "mysql": "^2.13.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.3.0",
+    "nodemon": "^1.11.0"
+  }
+}
