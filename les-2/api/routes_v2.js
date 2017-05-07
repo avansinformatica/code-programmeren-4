@@ -1,21 +1,35 @@
 
 var express = require('express');
-var routes = express.Router();
+var router = express.Router();
 
 var mijnObject = { 
 	message: 'Hello World Versie Twee!',
 };
 
-routes.get('/hello', function(req, res){
+
+router.get('*', function(req, res, next){
+	console.log('aangeroepen.');
+	next();
+});
+
+router.get('/hello', function(req, res){
 	res.contentType('application/json');
 	res.status(200);
 	res.json(mijnObject);
 });
 
-routes.get('/goodbye', function(req, res){
+router.get('/goodbye', function(req, res){
 	res.contentType('application/json');
 	res.status(200);
 	res.json({ 'tekst': 'Goodbye Versie 2!'});
 });
 
-module.exports = routes;
+// Fallback - als andere routes 
+router.get('*', function(req, res){
+	res.status(400);
+	res.json({
+		'error' : 'Deze methode is nog niet beschikbaar.'
+	});
+});
+
+module.exports = router;

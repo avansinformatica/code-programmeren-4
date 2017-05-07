@@ -17,18 +17,20 @@ describe('Hello API version 1', function(){
 			.end( function(err, res){
 				res.should.have.status(200);
 				res.should.be.json;
-				res.body.should.be.a('object');
-				res.body.should.have.property('mijntekst');
+				res.body.should.be.an('object');
+				res.body.should.have.property('mijntekst').that.is.a('string');
 				res.body.mijntekst.should.equal( 'Hello World!')
 
-				res.body.should.have.property('label');
+				res.body.should.have.property('label').that.is.a('string');
 				res.body.label.should.equal( 'Nog meer tekst')
 
-				res.body.should.have.property('mijnarray');
-				res.body.mijnarray.should.be.a('array');
-				// res.body.mijnarray.should.have.deep.property('[0]', 'tekst');
-				// res.body.mijnarray.should.have.property('[0]', 'nog meer tekst');
-				// res.body.mijnarray.should.have.property('[0]', 2);
+				res.body.should.have.property('mijnarray').that.is.an('array');
+				res.body.mijnarray.should.be.an('array');
+				res.body.mijnarray.should.have.lengthOf(3);
+				res.body.mijnarray.should.not.have.length.above(4);
+				res.body.mijnarray.should.have.deep.property('[0]', 'tekst');
+				res.body.mijnarray.should.have.deep.property('[1]', 'nog meer tekst');
+				res.body.mijnarray.should.have.deep.property('[2]', 2);
 
 				res.body.should.have.property('mijnobject');
 				res.body.mijnobject.should.be.a('object');
