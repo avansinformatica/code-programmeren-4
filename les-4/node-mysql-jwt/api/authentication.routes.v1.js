@@ -24,14 +24,14 @@ router.post('/login', function(req, res) {
     var password = req.body.password;
 
     // Dit is een dummy-user - die haal je natuurlijk uit de database.
-    var _dummy_username = "test";
+    var _dummy_username = "username";
     var _dummy_password = "test";
 
     // Kijk of de gegevens matchen. Zo ja, dan token genereren en terugsturen.
     if (username == _dummy_username && password == _dummy_password) {
+        var token = auth.encodeToken(username);
         res.status(200).json({
-            "token": auth.encodeToken(username),
-            "username": username
+            "token": token,
         });
     } else {
         res.status(401).json({ "error": "Invalid credentials, bye" })

@@ -23,10 +23,11 @@ app.use(bodyParser.urlencoded({ 'extended': 'true' })); // parse application/x-w
 app.use(bodyParser.json()); // parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 
-app.use(expressJWT({ secret: config.secretkey })
-    .unless({
-        path: ['/api/v1/login']
-    }));
+app.use(expressJWT({
+    secret: config.secretkey
+}).unless({
+    path: ['/api/v1/login']
+}));
 
 // configureer de app
 app.set('port', (process.env.PORT | config.webPort));
@@ -48,17 +49,17 @@ app.use('/api/v1', auth_routes_v1);
 app.use('/api/v1', routes_v1);
 app.use('/api/v2', routes_v2);
 
-// Handle express-jwt errors
 app.use(function(err, req, res, next) {
-    // Logging: bekijk de inhoud van err
     console.dir(err);
-    res.status(401).send({
-        error: err.name,
+    var error = {
         message: err.message,
         code: err.code,
+        name: err.name,
         status: err.status
-    });
+    }
+    res.status(401).send(error);
 });
+
 
 // Fallback - als geen enkele andere route slaagt wordt deze uitgevoerd. 
 app.use('*', function(req, res) {
