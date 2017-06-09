@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context="nl.avans.android.todos.presentation.ToDoEditActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:orientation="vertical">
+
+        <!--  ToDo title Label -->
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dip"
+            android:textColor="#372c24"
+            android:text="Title"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginEnd="25dip"
+            android:layout_marginBottom="12dp"
+            android:id="@+id/textEditToDoTitle"/>
+
+        <!--  ToDo description Label -->
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#372c24"
+            android:text="Description"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_marginEnd="25dip"
+            android:layout_gravity="top"
+            android:inputType="textMultiLine"
+            android:id="@+id/textEditToDoContents"/>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabSaveNewToDo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_done_white_48dp" />
+
+</android.support.design.widget.CoordinatorLayout>

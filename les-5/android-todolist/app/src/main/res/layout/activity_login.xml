@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="nl.avans.android.todos.presentation.LoginActivity">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:padding="25dip">
+
+        <!--  Username Label -->
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#372c24"
+            android:text="Username"/>
+
+        <EditText android:layout_width="fill_parent"
+            android:id="@+id/edittextUsername"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:layout_marginBottom="20dip"
+            android:singleLine="true"/>
+
+        <!--  Password Label -->
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#372c24"
+            android:text="Password"/>
+
+        <EditText android:layout_width="fill_parent"
+            android:id="@+id/edittextPassword"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:singleLine="true"
+            android:password="true"/>
+
+        <!-- Login button -->
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:height="60dip"
+            android:layout_marginTop="130dip"
+            android:text="Login"/>
+
+        <!-- Link to Registration Screen -->
+        <TextView android:id="@+id/link_to_register"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dip"
+            android:layout_marginBottom="40dip"
+            android:text="New here? Register here"
+            android:gravity="center"
+            android:textSize="20dip"
+            android:textColor="#0b84aa"/>
+
+        <TextView
+            android:id="@+id/txtLoginErrorMessage"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#372c24"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
