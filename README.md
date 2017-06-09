@@ -14,10 +14,7 @@ Koppeling met een MySQL database.
 Authenticatie via JSON WebTokens (JWT).
 
 ## Les 5
-Volgt nog.
+Gebruik van de API endpoints in een Android app, met gebruik van het [Volley](https://developer.android.com/training/volley/index.html) framework.
 
 ## Les 6
-Volgt nog.
-
-
-
+Software analyse in de cloud met [Travis CI](https://travis-ci.org/avansinformatica) en [SonarQube](https://sonarcloud.io). De code hiervoor vind je bij het materiaal van les 5.
